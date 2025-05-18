@@ -108,16 +108,16 @@ const SwipeCard = ({ movie, onSwipe, isTop, setSwipeProgress, swipeAnimating }: 
       transition={{ duration: 0.3 }}
     >
       <div 
-        className="absolute inset-0 bg-cover bg-center rounded-2xl"
+        className="absolute inset-0 bg-center bg-cover rounded-2xl"
         style={{ backgroundImage: `url(${movie.poster})` }}
       />
       <div className="card-content">
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent rounded-2xl" />
         <div className="relative z-10">
-          <h2 className="text-2xl font-bold mb-1 text-white">{movie.title}</h2>
+          <h2 className="mb-1 text-2xl font-bold text-white">{movie.title}</h2>
           <div className="flex items-center mb-2">
-            <span className="text-sm mr-2 text-gray-200">{movie.year}</span>
-            <div className="rating-stars flex">
+            <span className="mr-2 text-sm text-gray-200">{movie.year}</span>
+            <div className="flex rating-stars">
               {stars.map((star, index) => (
                 <Star
                   key={index}
@@ -131,7 +131,7 @@ const SwipeCard = ({ movie, onSwipe, isTop, setSwipeProgress, swipeAnimating }: 
             {movie.genres.map((genre, index) => (
               <span 
                 key={index}
-                className="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
+                className="px-2 py-1 text-xs text-white rounded-full bg-white/20 backdrop-blur-sm"
               >
                 {genre}
               </span>

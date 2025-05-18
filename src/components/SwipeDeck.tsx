@@ -7,8 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 
 const SwipeDeck = () => {
-  const { currentMovies, handleSwipe, refreshMovies } = useMovies();
-  const [isRefreshing, setIsRefreshing] = useState(false);
+  const { currentMovies, handleSwipe, refreshMovies, clearHistory } = useMovies();
   const [showMatch, setShowMatch] = useState(false);
   // Track swipe progress for glow effect
   const [swipeProgress, setSwipeProgress] = useState(0);
@@ -28,9 +27,7 @@ const SwipeDeck = () => {
 
   // Handle refresh button
   const handleRefresh = () => {
-    setIsRefreshing(true);
-    refreshMovies();
-    setTimeout(() => setIsRefreshing(false), 1000);
+    clearHistory();
   };
 
   // Show match overlay and trigger confetti
@@ -44,6 +41,8 @@ const SwipeDeck = () => {
       });
       setTimeout(() => setShowMatch(false), 3000);
     }
+    // confetti is a stable import, so it's fine to omit from deps
+    // eslint-disable-next-line
   }, [currentMovies.length]);
 
   // Render swipe buttons on left/right of card
