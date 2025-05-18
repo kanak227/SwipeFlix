@@ -25,7 +25,7 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="flex items-center space-x-2">
             <Film className="w-6 h-6 text-primary-500" />
             <h1 className="text-xl font-bold bg-gradient-to-r from-primary-500 to-accent-400 bg-clip-text text-transparent">
-              MovieMatch
+              SwipeFlix
             </h1>
           </div>
           
