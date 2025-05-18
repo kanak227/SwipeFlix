@@ -12,19 +12,19 @@ const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
   
   if (!mounted) {
-    return <div className="min-h-screen flex items-center justify-center">
+    return <div className="flex items-center justify-center min-h-screen">
       <div className="animate-pulse text-primary-500">Loading...</div>
     </div>;
   }
   
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
       {/* Header */}
-      <header className="glass-card fixed top-0 left-0 right-0 z-50 px-4 py-3 transition-all duration-300 ease-in-out backdrop-blur-lg bg-white/80 dark:bg-gray-900/80">
-        <div className="container mx-auto flex items-center justify-between">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3 transition-all duration-300 ease-in-out glass-card backdrop-blur-lg bg-white/80 dark:bg-gray-900/80">
+        <div className="container flex items-center justify-between mx-auto">
           <div className="flex items-center space-x-2">
             <Film className="w-6 h-6 text-primary-500" />
-            <h1 className="text-xl font-bold bg-gradient-to-r from-primary-500 to-accent-400 bg-clip-text text-transparent">
+            <h1 className="text-xl font-bold text-transparent bg-gradient-to-r from-primary-500 to-accent-400 bg-clip-text">
               SwipeFlix
             </h1>
           </div>
@@ -32,7 +32,7 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="flex items-center gap-2">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="p-2 transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
               aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             >
               {theme === 'dark' ? (
@@ -46,13 +46,13 @@ const Layout = ({ children }: LayoutProps) => {
       </header>
       
       {/* Main content with padding for header and nav */}
-      <main className="flex-1 container mx-auto px-4 pt-20 pb-24">
+      <main className="container flex-1 px-4 pt-20 pb-24 mx-auto">
         {children}
       </main>
       
       {/* Bottom navigation */}
-      <nav className="glass-card fixed bottom-0 left-0 right-0 z-50 py-2 backdrop-blur-lg bg-white/80 dark:bg-gray-900/80">
-        <div className="container mx-auto flex justify-around">
+      <nav className="fixed bottom-0 left-0 right-0 z-50 py-2 glass-card backdrop-blur-lg bg-white/80 dark:bg-gray-900/80">
+        <div className="container flex justify-around mx-auto">
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -64,7 +64,7 @@ const Layout = ({ children }: LayoutProps) => {
             }
           >
             <Film className="w-6 h-6" />
-            <span className="text-xs mt-1">Swipe</span>
+            <span className="mt-1 text-xs">Swipe</span>
           </NavLink>
           
           <NavLink
@@ -78,7 +78,7 @@ const Layout = ({ children }: LayoutProps) => {
             }
           >
             <BarChart2 className="w-6 h-6" />
-            <span className="text-xs mt-1">Dashboard</span>
+            <span className="mt-1 text-xs">Dashboard</span>
           </NavLink>
         </div>
       </nav>
