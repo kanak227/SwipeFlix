@@ -53,7 +53,7 @@ const SwipeDeck = () => {
         onClick={() => handleButtonSwipe('left')}
         className="p-4 text-white transition-colors rounded-full shadow-lg pointer-events-auto bg-red-500/80 hover:bg-red-600/90"
         aria-label="Dislike"
-        style={{ marginLeft: '-2.5rem' }}
+        style={{ marginLeft: '-4.5rem' }} // increased from -2.5rem to -4.5rem
       >
         <ArrowLeft size={28} />
       </button>
@@ -61,7 +61,7 @@ const SwipeDeck = () => {
         onClick={() => handleButtonSwipe('right')}
         className="p-4 text-white transition-colors rounded-full shadow-lg pointer-events-auto bg-green-500/80 hover:bg-green-600/90"
         aria-label="Like"
-        style={{ marginRight: '-2.5rem' }}
+        style={{ marginRight: '-4.5rem' }} // increased from -2.5rem to -4.5rem
       >
         <ArrowRight size={28} />
       </button>
